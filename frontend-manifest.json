@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "owner": "escuela",
+  "files": [
+    {
+      "path": "static/landing/checkout-billing.css",
+      "sha256": "11722ffda89dc917b5eb1cd56aee13b8d55b0080b95000829624853f75a9627c"
+    },
+    {
+      "path": "static/landing/checkout-billing.js",
+      "sha256": "5ae2eaf19131c7ed59dc20944036dc1b38343c6f99c05dfad0202dd2855538a5"
+    },
+    {
+      "path": "static/landing/landing.js",
+      "sha256": "dceade9e31616b17122f9bbf80f54305149bf2927dc445f8e16b308a9e3052d7"
+    },
+    {
+      "path": "static/landing/styles.css",
+      "sha256": "add19bb0c524b75f8356dac220be7c16b4c7323178deedafbebcde157263a11b"
+    },
+    {
+      "path": "templates/school/landing.html",
+      "sha256": "70bd23f26b76bc3e9213f48dd1cedcc75b1cb27616404c600bb45060ea76cf50"
+    }
+  ]
+}
