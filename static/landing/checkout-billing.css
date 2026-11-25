@@ -1,0 +1,25 @@
+.scl-billing{border:0;padding:0;margin:24px 0}.scl-billing legend{font-weight:700;font-size:20px;margin-bottom:12px}.scl-billing-kind{display:flex;gap:28px}.scl-billing-kind label{display:flex;gap:8px;align-items:center}.scl-billing-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}.scl-billing-grid label{display:flex;flex-direction:column;gap:7px;font-size:14px}.scl-billing-grid label[hidden]{display:none}.scl-billing-wide{grid-column:1/-1}.scl-billing-grid :is(input,select){box-sizing:border-box;width:100%;min-height:42px;padding:9px 12px;background:#faf8f0;color:#173e2c;border:1px solid #aaa99c;border-radius:5px;font:inherit}.scl-billing-kind input{accent-color:#cfac56}@media(max-width:600px){.scl-billing-grid{grid-template-columns:1fr}.scl-billing-wide{grid-column:auto}}
+
+.school-standalone dialog:has([data-checkout-billing]){width:min(880px,94vw);max-width:880px}.school-standalone dialog .scl-billing p{font-size:14px!important;line-height:1.5;margin:10px 0}.school-standalone dialog .scl-billing-grid label{font-size:14px;color:#fff}.scl-billing-grid input:focus-visible,.scl-billing-grid select:focus-visible{outline:2px solid #cfac56;outline-offset:2px}
+
+.scl-billing-location{display:grid;grid-template-columns:1fr 1.3fr 1.2fr;gap:20px}
+@media(min-width:800px){
+.school-standalone dialog:has([data-checkout-billing]){width:min(980px,94vw);max-width:980px;max-height:94vh;padding:22px 30px}
+.school-standalone dialog:has([data-checkout-billing]) .dialog-content{padding:0}
+.school-standalone dialog:has([data-checkout-billing]) .school-checkout h2{font-size:28px!important;line-height:1.15!important;margin:12px 0 18px!important}
+.school-standalone dialog:has([data-checkout-billing]) .checkout-eyebrow{margin:0!important;font-size:12px!important}
+.school-standalone dialog:has([data-checkout-billing]) .scl-enrollment-options{margin:0 0 14px;padding:0}
+.school-standalone dialog:has([data-checkout-billing]) .scl-enrollment-options legend{font-size:16px;margin-bottom:8px}
+.school-standalone dialog:has([data-checkout-billing]) .scl-enrollment-choices label{padding:10px 14px}
+.school-standalone dialog:has([data-checkout-billing]) .scl-enrollment-choices strong{display:inline;margin-left:14px;font-size:18px}
+.school-standalone dialog:has([data-checkout-billing]) .scl-billing{margin:14px 0}
+.school-standalone dialog:has([data-checkout-billing]) .scl-billing legend{font-size:18px;margin-bottom:8px}
+.school-standalone dialog:has([data-checkout-billing]) .scl-billing-grid{gap:10px 20px}
+.school-standalone dialog:has([data-checkout-billing]) .scl-billing-grid :is(input,select){min-height:36px;padding:7px 10px}
+.school-standalone dialog:has([data-checkout-billing]) .scl-promotion{margin:14px 0;padding:12px 0}
+.school-standalone dialog:has([data-checkout-billing]) .scl-promotion input[type=text]{padding:8px 10px}
+.school-standalone dialog:has([data-checkout-billing]) form>p{font-size:13px!important;line-height:1.4!important;margin:8px 0!important}
+.school-standalone dialog:has([data-checkout-billing]) .scl-modal-confirm{min-height:44px;padding:10px 16px}
+}
+@media(max-width:600px){.scl-billing-location{grid-template-columns:1fr;gap:14px}}
+@media(min-width:800px){.school-standalone dialog:has([data-checkout-billing]) .school-checkout h2{margin:6px 0 10px!important}.school-standalone dialog:has([data-checkout-billing]) .scl-billing{margin:10px 0}.school-standalone dialog:has([data-checkout-billing]) .scl-billing p{margin:6px 0!important}.school-standalone dialog:has([data-checkout-billing]) .scl-billing-grid{gap:8px 20px}.school-standalone dialog:has([data-checkout-billing]) .scl-billing-grid label{gap:4px}.school-standalone dialog:has([data-checkout-billing]) .scl-promotion{margin:8px 0;padding:8px 0}.school-standalone dialog:has([data-checkout-billing]) .scl-promotion p{margin:6px 0!important}.school-standalone dialog:has([data-checkout-billing]) form>p{margin:6px 0!important}}

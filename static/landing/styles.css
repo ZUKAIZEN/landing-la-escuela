@@ -1,0 +1,733 @@
+/* Styles retained from the approved Escuela landing, in cascade order. */
+@font-face{font-family:Inter;src:url('../brand/inter.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{color-scheme:dark;--gold:#d2ac58;--ink:#080808;--white:#f5f5f3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--ink);color:var(--white);font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+button,a{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+button{border:0;background:none}
+button:hover,a:hover{color:var(--gold)}
+[hidden]{display:none!important}
+nav{display:flex;align-items:center;justify-content:space-between;gap:22px;flex:1;white-space:nowrap}
+nav>a,nav>button,.dropdown>button{font-size:clamp(12px,1.05vw,18px);padding:14px 0;letter-spacing:-.04em}
+.eyebrow{color:var(--gold);font-size:clamp(13px,1.25vw,22px);letter-spacing:.18em;display:flex;align-items:center;gap:30px;margin:0 0 34px;font-weight:500}
+h1{font-size:clamp(58px,5.7vw,100px);font-weight:750;line-height:1.02;letter-spacing:-.045em;margin:0 0 28px}
+.primary{display:inline-flex;align-items:center;justify-content:center;gap:26px;border:1px solid #e3bf72;background:linear-gradient(110deg,#cba44f,#d8b669);border-radius:8px;padding:17px 30px;color:#090909;font-size:clamp(18px,1.65vw,29px);font-weight:650;white-space:nowrap;transition:filter .2s,transform .2s}
+.primary:hover{color:#000;filter:brightness(1.1);transform:translateY(-2px)}
+.primary span{font-size:1.25em}
+.scroll-cue{position:absolute;bottom:39px;left:50%;transform:translateX(-50%);width:48px;height:40px;display:grid;place-items:center;color:var(--gold)}
+.scroll-cue svg{width:25px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.scroll-cue:hover svg{transform:translateY(5px)}
+footer{display:flex;gap:40px;align-items:center;padding:40px 7%;flex-wrap:wrap}
+dialog{background:#171716;color:var(--white);border:1px solid #4b4433;border-radius:15px;padding:55px;max-width:600px;width:calc(100% - 32px)}
+dialog::backdrop{background:#000b;backdrop-filter:blur(6px)}
+dialog h2{font-size:34px;letter-spacing:-.04em}
+dialog p{line-height:1.7}
+.dialog-close{position:absolute;right:14px;top:10px;font-size:32px}
+@media(max-width:1250px){
+nav{gap:15px}
+nav>a,nav>button,.dropdown>button{font-size:12px}
+}
+@media(max-width:1050px){
+nav{display:none;position:absolute;left:0;right:0;top:72px;background:#121211;padding:20px 6% 30px;max-height:calc(100svh - 72px);overflow:auto;white-space:normal;border-bottom:1px solid #444}
+nav>a,nav>button,.dropdown>button{text-align:left;font-size:17px;padding:14px 0}
+h1{font-size:clamp(58px,7.1vw,75px)}
+.primary,.secondary{font-size:18px}
+}
+@media(max-width:600px){
+html{scroll-padding-top:20px}
+nav{top:67px;max-height:calc(100svh - 67px)}
+.eyebrow{font-size:10px;letter-spacing:.15em;gap:12px;margin-bottom:28px}
+h1{font-size:clamp(39px,10.5vw,58px);line-height:1.07;letter-spacing:-.05em;max-width:100%;margin-bottom:25px}
+.primary{font-size:17px;padding:15px 20px;gap:23px}
+.scroll-cue{bottom:23px}
+footer{padding:35px 6%;gap:25px}
+dialog{padding:45px 25px 30px}
+dialog h2{font-size:29px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+}
+:root{--paper:#f1eee6;--green:#0d3b36}
+.skip-link{position:absolute;top:-100px;left:20px;z-index:99;padding:15px;background:var(--gold);color:#111}
+.skip-link:focus{top:10px}
+main{min-height:65vh}
+footer{padding:65px 7% 25px;display:block;border-top:1px solid #3f392c;background:#0b0b0a}
+details{border-top:1px solid #51452d;padding:20px 0;max-width:1000px}
+summary{cursor:pointer;font-size:18px;line-height:1.5}
+details p{color:#b4ad9c;line-height:1.8;font-size:16px;max-width:800px}
+.dialog-content .primary{font-size:16px;white-space:normal}
+button:disabled{opacity:.35;cursor:not-allowed;transform:none!important;filter:none!important}
+@media(max-width:600px){
+footer{padding:45px 6% 25px}
+}
+html{scroll-padding-top:calc(var(--chrome-h,76px) + 12px)}
+body:not(.original) h1{letter-spacing:-.02em}
+body:not(.original){--title-h1:72px;--title-h2:49px;--title-h3:32px;--title-h4:24px;--title-h5:20px}
+body:not(.original) h1{font-size:var(--title-h1)!important;line-height:1.1!important;letter-spacing:-.01em}
+body:not(.original) h2{font-size:var(--title-h2)!important;line-height:1.12!important;letter-spacing:-.015em}
+body:not(.original) h3{font-size:var(--title-h3)!important;line-height:1.2!important;letter-spacing:-.01em}
+body:not(.original) h4{font-size:var(--title-h4)!important;line-height:1.25!important;letter-spacing:0}
+body:not(.original) :is(h1,h2,h3,h4,h5) :is(span,em,strong,a){font-size:inherit!important;line-height:inherit!important}
+@media(min-width:651px) and (max-width:1100px){
+body:not(.original){--title-h1:56px;--title-h2:44px;--title-h3:28px;--title-h4:23px;--title-h5:19px}
+}
+@media(max-width:650px){
+body:not(.original){--title-h1:40px;--title-h2:34px;--title-h3:26px;--title-h4:22px;--title-h5:18px}
+}
+@media(min-width:1101px){
+body:not(.original){--body-copy-size:clamp(17px,calc(14px + .278vw),18px)}
+body:not(.original) :is(main,dialog) p:not(:is(.eyebrow,.training-intro-eyebrow,.hero-subtitle,.school-date,.origen-price,.origen-price-reference,.origen-edition,.origen-hero-date,.origen-tagline,.origen-countdown-ended,.method-plane-label,.method-continuity-journey,.plane-kicker,.plane-subtitle,.community-name,.portal-sidebar-label,.checkout-eyebrow,.up-step-label,.pill)){font-size:var(--body-copy-size)!important}
+body:not(.original) :is(main,dialog) p:not(:is(.eyebrow,.training-intro-eyebrow,.hero-subtitle,.school-date,.origen-price,.origen-price-reference,.origen-edition,.origen-hero-date,.origen-tagline,.origen-countdown-ended,.method-plane-label,.method-continuity-journey,.plane-kicker,.plane-subtitle,.community-name,.portal-sidebar-label,.checkout-eyebrow,.up-step-label,.pill)) :is(strong,em){font-size:inherit!important}
+}
+body:not(.original) :is(main,dialog) :is(h1,h2,h3,h4,h5){font-weight:600!important}
+body:not(.original) :is(main,dialog) :is(h1,h2,h3,h4,h5) :is(span,em,strong,a){font-weight:inherit!important}
+.section-travel{position:fixed;right:18px;bottom:22px;z-index:45;display:flex;flex-direction:column;gap:6px;padding:5px;background:#121617ed;border:1px solid #9c8557;border-radius:28px;box-shadow:0 3px 14px #0002}
+.section-travel[hidden],.section-travel button[hidden]{display:none!important}
+.section-travel button{display:grid;place-items:center;width:40px;height:40px;padding:10px;border:0;border-radius:50%;background:transparent;color:#f6f2e9;cursor:pointer;transition:color .18s,background .18s}
+.section-travel button svg{display:block;width:22px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.section-travel button:hover{color:#e1bd6e;background:#ffffff0d}
+.section-travel button:focus-visible{outline:2px solid #e1bd6e;outline-offset:1px;color:#e1bd6e}
+@media(max-width:600px){
+.section-travel{right:10px;bottom:14px;padding:3px;gap:2px}
+.section-travel button{width:40px;height:40px}
+}
+@media(prefers-reduced-motion:reduce){
+.section-travel button{transition:none}
+}
+main section>.page-cover-cue{position:relative;left:auto;bottom:auto;transform:none;margin:24px auto 0;width:48px;height:40px;grid-column:1/-1;align-self:end;justify-self:center;color:#d2ac58;flex:0 0 auto}
+.page-cover-cue:focus-visible{outline:2px solid #d2ac58;outline-offset:4px;border-radius:4px}
+@media(max-width:600px){
+main section>.page-cover-cue{margin-top:20px}
+}
+.school-landing{--scl-ink:#121617;--scl-green:#0d3836;--scl-gold:#a47c2d;color:var(--scl-ink)}
+.school-landing .scl-section{padding:75px max(6%,calc((100% - 1320px)/2))}
+.school-landing .scl-white{background:#fff}
+.school-landing .scl-paper{background:#f6f2e8}
+.school-landing .scl-sage{background:#e9eee7}
+.school-landing .scl-dark{background:#121617;color:#f5f3ed}
+.school-landing .scl-green{background:#0d3836;color:#f5f3ed}
+body:not(.original) .school-landing h2{font:600 52px/1.1 Inter,sans-serif!important;text-transform:uppercase;letter-spacing:-.025em;max-width:none;color:inherit;margin:0 0 25px}
+.school-landing h2>span{color:#a47c2d}
+.school-landing :is(.scl-dark,.scl-green) h2>span{color:#e1bd6e}
+body:not(.original) .school-landing h3{font:600 25px/1.2 Inter,sans-serif!important;letter-spacing:-.02em;color:inherit;margin:0 0 15px}
+body:not(.original) .school-landing h4{font:600 16px/1.4 Inter,sans-serif!important;letter-spacing:0;color:#a47c2d;margin:0 0 12px}
+body:not(.original) .school-landing section p{font:400 18px/1.5 Inter,sans-serif!important;color:#343e36;margin:0 0 19px}
+body:not(.original) .school-landing :is(.scl-dark,.scl-green) p{color:#d0d9d1}
+body:not(.original) .school-landing section .eyebrow{font:600 14px/1.5 Inter,sans-serif!important;letter-spacing:.1em;text-transform:uppercase;color:#a47c2d;margin:0 0 22px}
+body:not(.original) .school-landing :is(.scl-dark,.scl-green,.scl-hero) .eyebrow{color:#e1bd6e}
+.school-landing .scl-button{display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:16px 24px;min-height:54px;border:1px solid #cba44f;background:#d2ac58;color:#121617;border-radius:3px;font:600 17px/1.4 Inter,sans-serif;cursor:pointer;transition:background .18s,color .18s;text-align:center}
+.school-landing .scl-button:hover{background:#e1bd6e;color:#121617}
+.school-landing .scl-button:focus-visible,.school-landing summary:focus-visible{outline:3px solid #a47c2d;outline-offset:5px}
+.school-landing .scl-text-link{font:500 16px/1.5 Inter,sans-serif;color:inherit;border-bottom:1px solid #d2ac58;padding-bottom:5px}
+.school-landing .scl-hero{background:radial-gradient(ellipse at 80% 50%,#21433c,#121c19 62%,#121617);color:#fff;padding:45px max(6%,calc((100% - 1360px)/2)) 0}
+.scl-hero-inner{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:7%;align-items:center;padding:20px 0 35px;min-height:650px}
+body:not(.original) .school-landing #scl-title{font:600 72px/1.02 Inter,sans-serif!important;letter-spacing:-.03em;color:#fff;text-transform:uppercase;margin:0 0 27px}
+.school-landing #scl-title>span{color:#e1bd6e}
+body:not(.original) .school-landing .scl-hero-copy>p:not(.eyebrow){font:400 18px/1.5 Inter,sans-serif!important;color:#dce4dc;max-width:620px;margin:0 0 28px}
+.scl-hero-actions{display:flex;align-items:center;gap:27px;flex-wrap:wrap}
+.scl-hero-dates{display:flex;gap:32px;border-top:1px solid #d2ac5844;padding-top:23px;margin-top:30px}
+.scl-hero-dates>span{font:400 13px/1.5 Inter,sans-serif;color:#cbd5cb}
+.scl-hero-dates strong{display:block;color:#e1bd6e;font:600 16px/1.5 Inter,sans-serif;margin-top:5px}
+.scl-house-cover{margin:0;text-align:center;width:100%;max-width:420px;justify-self:center}
+.scl-filter-defs{position:absolute;width:0;height:0;overflow:hidden}
+.scl-house-door{position:relative;background:#f9f5e9;border:1px solid #c6a050;border-radius:210px 210px 8px 8px;padding:90px 24px 42px;overflow:hidden;box-shadow:0 0 0 12px #d2ac5808,0 0 0 24px #d2ac5805}
+.scl-house-door>img{display:block;width:100%;height:auto;filter:url(#scl-paper-removal);position:relative;z-index:1}
+.scl-house-door>span{display:block;font:500 17px/1.5 Inter,sans-serif;color:#0d3836;margin-top:30px;position:relative;z-index:1}
+.scl-house-light{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,#e1bd6e55,transparent 65%);pointer-events:none}
+.scl-house-cover figcaption{font:400 15px/1.5 Inter,sans-serif;color:#dfc38b;margin-top:25px}
+.scl-purpose{display:grid;grid-template-columns:1.1fr 1fr;gap:9%;align-items:center}
+.scl-purpose>div>p:last-child{margin-bottom:0}
+.scl-pedagogy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px;margin-top:40px}
+.scl-pedagogy article{padding-top:22px;border-top:1px solid #c1ad7d}
+.school-landing .scl-pedagogy h3{color:#0d3836;text-transform:uppercase}
+body:not(.original) .school-landing .scl-pedagogy article>p{font-size:16px!important;margin:0}
+body:not(.original) .school-landing .scl-wide-note{font:400 15px/1.5 Inter,sans-serif!important;border-top:1px solid #b89b6055;padding-top:23px;margin:30px 0 0;max-width:none}
+.school-landing .scl-dark .scl-wide-note{color:#bbc9bc}
+.scl-encounter{display:grid;grid-template-columns:1.1fr 1fr;gap:9%;align-items:center}
+.scl-encounter-heading>p:not(.eyebrow){max-width:560px}
+.scl-encounter-time{padding-bottom:23px;border-bottom:1px solid #d2ac5855;margin-bottom:22px}
+.scl-encounter-time>span{display:block;font:500 16px/1.5 Inter,sans-serif;color:#e1bd6e;margin-bottom:12px}
+.scl-encounter-time>strong{font:600 78px/1.1 Inter,sans-serif;color:#fff;letter-spacing:.015em}
+.scl-encounter-time small{font:400 28px/1.5 Inter,sans-serif}
+body:not(.original) .school-landing .scl-encounter-time>p{font-size:15px!important;color:#d8dece;margin:8px 0 0}
+body:not(.original) .school-landing .scl-encounter-extra>p{font-size:16px!important}
+.scl-section-heading{max-width:1040px;margin:0 0 37px}
+.scl-section-heading>p{max-width:830px}
+.scl-room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 35px}
+.scl-room{border-top:1px solid #bba36d;padding-top:24px;min-width:0}
+.scl-room>svg{width:42px;height:42px;color:#a47c2d;margin-bottom:18px}
+body:not(.original) .school-landing .scl-room>p{font-size:16px!important;margin:0}
+.scl-needs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none;margin:36px 0;padding:0;width:100%}
+.scl-needs>li{display:flex;align-items:center;gap:15px;min-height:77px;background:#f7f5ee;border:1px solid #e2ddce;padding:20px 23px;font:500 16px/1.5 Inter,sans-serif;color:#193c30;border-radius:5px}
+.scl-needs>li:before{content:"";width:18px;height:2px;background:#b18a3d;flex:0 0 18px}
+@media(max-width:1000px){
+.scl-needs>li{padding:18px 16px;gap:11px}
+.scl-needs>li:before{width:12px;flex-basis:12px}
+}
+@media(max-width:700px){
+.scl-needs{grid-template-columns:1fr;gap:10px;margin-block:28px}
+.scl-needs>li{min-height:62px;padding:17px 20px}
+}
+.scl-compass-route{display:flex;align-items:center;justify-content:center;gap:30px;border-block:1px solid #d5c398;padding:26px 0}
+.scl-compass-route>span{font:600 27px/1.25 Inter,sans-serif;color:#0d3836;text-transform:uppercase}
+.scl-compass-route>i{font:400 25px/1 Inter,sans-serif;color:#a47c2d}
+body:not(.original) .school-landing .scl-centered-note{font-size:15px!important;text-align:center;margin:17px 0 0}
+.scl-forces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:33px 30px;list-style:none;padding:0;margin:0}
+.scl-forces>li{border-top:1px solid #98a793;padding-top:18px;min-width:0}
+.scl-index{font:500 14px/1.5 Inter,sans-serif;color:#8e6a29;display:block;margin-bottom:12px}
+body:not(.original) .school-landing .scl-forces h3{font-size:21px!important;line-height:1.3!important}
+body:not(.original) .school-landing .scl-forces p{font-size:16px!important;margin:0}
+.scl-library-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:9%;align-items:center}
+.scl-library-loop>article{display:grid;grid-template-columns:35px 1fr;gap:0 18px;padding:23px 0;border-top:1px solid #d2ac5844}
+.scl-library-loop>article>span{grid-column:1;grid-row:1/3;font:500 15px/1.5 Inter,sans-serif;color:#d2ac58}
+.scl-library-loop h3{grid-column:2}
+.scl-library-loop p{grid-column:2}
+body:not(.original) .school-landing .scl-library-loop p{font-size:16px!important;margin:0}
+.scl-memory{display:grid;grid-template-columns:1fr 1fr;gap:45px;margin-top:40px}
+.scl-memory>div{border-top:1px solid #bba36d;padding-top:24px}
+.scl-memory svg{width:38px;height:38px;color:#a47c2d;float:right;margin-left:15px}
+body:not(.original) .school-landing .scl-memory p{font-size:16px!important;margin:0}
+#salon-escuela{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:9%;align-items:stretch;background:#0d3836}
+#salon-escuela .scl-salon-intro{display:flex;flex-direction:column}
+#salon-escuela .scl-salon-intro>.eyebrow{justify-content:flex-start;margin-bottom:25px}
+#salon-escuela h2{margin-bottom:27px}
+#salon-escuela .scl-salon-intro>p:not(.eyebrow){max-width:580px}
+#salon-escuela blockquote{font:500 24px/1.4 Inter,sans-serif;color:#e1bd6e;letter-spacing:-.015em;margin:24px 0 0;padding-top:23px;border-top:1px solid #d2ac5866;font-style:normal;max-width:540px}
+.scl-salon-whatsapp{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:24px}
+.scl-whatsapp-mark{display:flex;flex-direction:column;align-items:center;text-align:center;color:#d2bd83}
+.scl-whatsapp-mark svg{display:block;width:clamp(180px,15vw,220px);height:auto;max-width:100%;margin-bottom:15px}
+.scl-whatsapp-mark strong{font:600 40px/1.2 Inter,sans-serif;letter-spacing:-.5px}
+.scl-whatsapp-mark>span{font:400 18px/1.5 Inter,sans-serif;color:#e1bd6e;margin-top:8px}
+.scl-salon-details{max-width:520px}
+body:not(.original) .school-landing #salon-escuela .scl-salon-details p{font:400 16px/1.5 Inter,sans-serif!important;color:#dce5d9;margin:0 0 18px}
+.scl-salon-details p:last-child{margin-bottom:0!important}
+#salon-escuela .scl-salon-intro>p:last-of-type{margin-bottom:0}
+@media(max-width:1100px){#salon-escuela{gap:6%}.scl-whatsapp-mark svg{width:190px}}
+@media(max-width:800px){
+#salon-escuela{grid-template-columns:1fr;gap:38px}
+.scl-salon-whatsapp{align-items:flex-start}
+.scl-whatsapp-mark{align-self:center}
+.scl-whatsapp-mark svg{width:180px}
+#salon-escuela blockquote{font-size:23px;margin-top:24px}
+.scl-salon-details{max-width:none}
+}
+#cuidado-escuela .scl-care-story{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);gap:8%;align-items:center}
+.scl-care-portrait h2{margin-bottom:8px!important}
+.scl-care-illustration{width:100%;max-width:560px;height:auto;display:block;margin:12px 0 0}
+#cuidado-escuela .scl-care-grid{display:grid;grid-template-columns:1fr;gap:28px}
+#cuidado-escuela .scl-care-grid>article{display:grid;grid-template-columns:45px minmax(0,1fr);gap:18px;padding:0;border:0}
+.scl-care-symbol{color:#a58441}
+.scl-care-symbol svg{display:block;width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+#cuidado-escuela .scl-care-grid h3{margin-bottom:10px}
+body:not(.original) .school-landing #cuidado-escuela .scl-care-grid p{font-size:16px!important;margin:0}
+#cuidado-escuela .scl-evolution{display:grid;grid-template-columns:1fr 1fr;gap:7%;padding:30px 0 0;margin-top:35px;background:none;border-top:1px solid #b8a36c88}
+#cuidado-escuela .scl-evolution>div{position:relative;padding-left:24px}
+#cuidado-escuela .scl-evolution>div:before{content:'';position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:#b18a3d}
+#cuidado-escuela .scl-evolution>div+div:before{background:transparent;border:1px solid #a58441}
+.scl-care-phase{display:block;font:600 12px/1.5 Inter,sans-serif;letter-spacing:.12em;color:#96712a;margin-bottom:12px}
+#cuidado-escuela .scl-evolution h3{color:#0d3836;font-size:23px!important}
+body:not(.original) .school-landing #cuidado-escuela .scl-evolution p{font-size:16px!important;margin:0}
+#cuidado-escuela .scl-wide-note{border:0;border-left:2px solid #c5a252;padding:0 0 0 20px;margin:30px 0 0;max-width:none;width:100%}
+@media(max-width:900px){
+#cuidado-escuela .scl-care-story{grid-template-columns:1fr;gap:30px}
+.scl-care-portrait{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0 25px}
+.scl-care-portrait>.eyebrow{grid-column:1/-1}
+.scl-care-portrait .scl-care-illustration{margin:0}
+#cuidado-escuela .scl-care-grid{gap:25px}
+}
+@media(max-width:600px){
+.scl-care-portrait{grid-template-columns:1fr}
+.scl-care-illustration{max-width:380px;margin:12px auto 0!important}
+#cuidado-escuela .scl-evolution{grid-template-columns:1fr;gap:27px;margin-top:28px}
+#cuidado-escuela .scl-care-grid>article{grid-template-columns:35px minmax(0,1fr);gap:13px}
+.scl-care-symbol svg{width:33px;height:33px}
+}
+.school-landing .scl-membership{background:#e8d9b4}
+.school-landing .scl-faq{display:grid;grid-template-columns:.85fr 1.15fr;gap:8%;align-items:start}
+.scl-faq details{border:0;border-bottom:1px solid #d2ac5844;padding:0;margin:0}
+.scl-faq details:first-child{border-top:1px solid #d2ac5844}
+.scl-faq summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;font:600 18px/1.4 Inter,sans-serif;color:#f5f3ed;cursor:pointer;list-style:none}
+.scl-faq summary::-webkit-details-marker{display:none}
+.scl-faq summary:after{content:'+';font:400 25px/1 Inter,sans-serif;color:#e1bd6e;flex:0 0 18px}
+.scl-faq summary:hover{color:#e1bd6e}
+body:not(.original) .school-landing .scl-faq details>p{font:400 16px/1.5 Inter,sans-serif!important;color:#cbd4cc;padding:0 18px 22px 0;margin:0}
+.school-landing .scl-closing{background:#fff;text-align:center}
+.scl-closing .scl-button{margin-top:8px}
+.school-checkout dl{display:grid;grid-template-columns:160px 1fr;gap:14px 18px;border-block:1px solid #d2ac5844;padding:23px 0;margin:25px 0}
+.school-checkout dt{color:#bac7ba}
+.school-checkout dd{margin:0;text-align:right;color:#fff}
+.school-checkout .scl-modal-confirm{display:flex;justify-content:center;width:100%;font:600 18px/1.4 Inter,sans-serif;margin-top:25px}
+@media(max-width:1400px){
+body:not(.original) .school-landing #scl-title{font-size:62px!important}
+.scl-hero-inner{gap:5%}
+.scl-house-door{padding-top:72px}
+}
+@media(max-width:1100px){
+body:not(.original) .school-landing h2{font-size:44px!important}
+body:not(.original) .school-landing #scl-title{font-size:54px!important}
+.school-landing .scl-section{padding-top:60px;padding-bottom:60px}
+.scl-room-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.scl-forces{grid-template-columns:repeat(2,minmax(0,1fr))}
+.scl-purpose,.scl-encounter,.scl-library-layout{gap:6%}
+.scl-hero-inner{grid-template-columns:1.15fr .85fr;min-height:0}
+.scl-house-door{padding:55px 17px 32px}
+.scl-house-door>span{font-size:15px;margin-top:19px}
+.scl-hero-dates{flex-direction:column;gap:15px}
+}
+@media(max-width:800px){
+.scl-hero-inner{grid-template-columns:1fr;gap:40px;padding-bottom:25px}
+.scl-house-cover{max-width:360px}
+.scl-house-door{padding:65px 24px 35px}
+.school-landing .scl-hero{padding-top:35px}
+.scl-hero-dates{flex-direction:row;gap:25px}
+.scl-purpose,.scl-encounter,.scl-library-layout,.scl-membership-inner,.school-landing .scl-faq{grid-template-columns:1fr;gap:32px}
+.scl-care-grid{grid-template-columns:1fr;gap:27px}
+.scl-compass-route{gap:17px}
+.scl-compass-route>span{font-size:21px}
+.scl-evolution{gap:27px;padding:25px}
+}
+@media(max-width:600px){
+.school-landing .scl-section{padding:46px 6%}
+body:not(.original) .school-landing h2{font-size:34px!important}
+body:not(.original) .school-landing #scl-title{font-size:44px!important}
+body:not(.original) .school-landing section p{font-size:16px!important}
+.school-landing .scl-hero{padding-inline:6%}
+.scl-hero-actions{gap:22px}
+.scl-hero-dates{flex-direction:column;gap:13px}
+.scl-house-cover{max-width:310px}
+.scl-house-door{padding-top:48px}
+.scl-room-grid,.scl-pedagogy,.scl-memory,.scl-evolution{grid-template-columns:1fr;gap:27px}
+.scl-room-grid{gap:30px}
+.scl-forces{gap:26px 20px}
+.scl-compass-route{gap:10px;flex-wrap:wrap;padding-block:20px}
+.scl-compass-route>span{font-size:17px}
+.scl-compass-route>i{font-size:20px}
+.scl-encounter-time>strong{font-size:64px}
+.school-checkout dl{grid-template-columns:1fr;gap:6px}
+.school-checkout dd{text-align:left;margin-bottom:10px}
+.school-landing .scl-button{font-size:16px;gap:16px}
+.scl-faq summary{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+.school-landing .scl-button{transition:none}
+}
+#biblioteca-escuela .scl-library-heading{margin-bottom:24px}
+#biblioteca-escuela .scl-library-heading h2{max-width:none}
+#biblioteca-escuela .scl-library-layout{display:block}
+#biblioteca-escuela .scl-library-layout>div:first-child{max-width:980px}
+#biblioteca-escuela .scl-library-layout>div:first-child>p{margin-bottom:0}
+#biblioteca-escuela .scl-library-loop{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:33px}
+#biblioteca-escuela .scl-library-loop>article{display:block;border-top:1px solid #d2ac5866;padding:23px 0 0}
+#biblioteca-escuela .scl-library-loop>article>span{display:block;margin-bottom:15px;font-size:14px}
+#biblioteca-escuela .scl-library-loop h3{margin:0 0 13px}
+#biblioteca-escuela .scl-wide-note{margin-top:32px}
+@media(max-width:700px){
+#biblioteca-escuela .scl-library-loop{grid-template-columns:1fr;gap:25px;margin-top:27px}
+#biblioteca-escuela .scl-library-loop>article{padding-top:20px}
+#biblioteca-escuela .scl-library-loop>article>span{margin-bottom:10px}
+}
+.school-landing #interes.scl-membership{background:#eee3ca;color:#1d2620}
+.scl-join-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:9%;align-items:stretch}
+.scl-join-story>h3{max-width:440px}
+.scl-join-story>p{max-width:580px}
+.scl-join-benefits{list-style:none;margin:18px 0;padding:0}
+.scl-join-benefits li{position:relative;padding:0 0 6px 27px;font:400 16px/1.5 Inter,sans-serif;color:#344237}
+.scl-join-benefits li:last-child{padding-bottom:0}
+.scl-join-benefits li:before{content:'✓';position:absolute;left:0;color:#a47c2d}
+.scl-join-standard{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+.scl-join-standard>div{border:1px solid #b08a3b;background:#ffffff26;padding:12px 17px;min-width:185px}
+.scl-join-standard span{display:block;font:500 12px/1.5 Inter,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:#566050}
+.scl-join-standard strong{display:block;color:#0d3836;font:600 26px/1.3 Inter,sans-serif;margin-top:5px}
+.scl-join-standard small{font:400 15px/1.5 Inter,sans-serif}
+body:not(.original) .school-landing #interes .scl-join-terms{font:400 14px/1.5 Inter,sans-serif!important;color:#5a6356;margin:14px 0 23px}
+.scl-join-start{display:flex;align-items:center;gap:20px;border-top:1px solid #d8c9a4;padding-top:21px;color:#0d3836}
+.scl-join-start>span:first-child{font:500 14px/1.5 Inter,sans-serif}
+.scl-join-start>strong{font:600 65px/1 Inter,sans-serif;letter-spacing:-2px}
+.scl-join-start>span:last-child{font:500 17px/1.4 Inter,sans-serif}
+.scl-join-offer{display:flex;flex-direction:column;justify-content:space-between;align-items:center;min-width:0}
+.scl-join-logo{display:block;width:min(310px,88%);height:auto;margin:0 auto 14px;filter:url(#scl-paper-removal)}
+.scl-join-promotion{width:100%;max-width:550px;text-align:center;border-top:1px solid #b49653;padding-top:17px}
+body:not(.original) .school-landing #interes .scl-join-special{font:600 21px/1.3 Inter,sans-serif!important;letter-spacing:.04em;text-transform:uppercase;color:#a47c2d;margin:0 0 10px}
+body:not(.original) .school-landing #interes .scl-join-promotion>h3{font:600 30px/1.1 Inter,sans-serif!important;text-transform:uppercase;color:#0d3836;letter-spacing:-.015em;margin:0 0 15px}
+.scl-founder-options{color-scheme:light;border:0;padding:0;margin:0;min-width:0}
+.scl-founder-options legend{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.scl-founder-rates{display:flex;justify-content:center;align-items:flex-start;gap:18px}
+.scl-founder-choice{display:flex;flex-direction:column;align-items:center;padding:0 4px 8px;border-bottom:2px solid transparent;cursor:pointer;color:#0d3836;min-width:0}
+.scl-founder-choice strong{display:block;font:600 60px/1 Inter,sans-serif;letter-spacing:-.025em;white-space:nowrap}
+.scl-founder-choice>span{display:flex;align-items:center;gap:8px;font:500 16px/1.5 Inter,sans-serif;color:#344237;margin-top:10px}
+.scl-founder-choice input{width:16px;height:16px;margin:0;accent-color:#0d3836;cursor:pointer}
+.scl-founder-choice:has(input:checked){border-color:#b18a3d}
+.scl-founder-choice:has(input:focus-visible){outline:2px solid #a47c2d;outline-offset:5px}
+.scl-founder-rates>b{font:400 37px/60px Inter,sans-serif;color:#0d3836}
+.scl-founder-choice:hover strong{color:#a47c2d}
+body:not(.original) .school-landing #interes .scl-join-enrollment{margin:14px 0 0;padding:14px 17px;background:#f6f3eb;border-left:3px solid #b18a3f;color:#344237;font:400 16px/1.5 Inter,sans-serif!important;text-align:left}
+body:not(.original) .school-landing #interes .scl-join-selection{font:400 13px/1.5 Inter,sans-serif!important;text-align:center;color:#58624f;margin:10px 0}
+.scl-join-offer>.scl-button{background:#0d3836;color:#fff;border-color:#0d3836;width:100%;max-width:550px;justify-content:space-between}
+.scl-join-offer>.scl-button:hover{background:#1a4a42}
+.scl-join-scope{margin:30px 0 0!important;padding-top:20px;border-top:1px solid #e1dece;font-size:14px!important;color:#5a6356!important}
+@media(max-width:1100px){
+.scl-join-layout{gap:6%}
+.scl-founder-choice strong{font-size:50px}
+.scl-founder-rates{gap:12px}
+.scl-founder-rates>b{font-size:30px;line-height:50px}
+.scl-join-logo{width:min(300px,90%)}
+.scl-join-standard>div{min-width:150px;padding-inline:12px}
+}
+@media(max-width:800px){
+.scl-join-layout{grid-template-columns:1fr;gap:38px}
+.scl-join-offer{max-width:560px;width:100%;justify-self:center}
+.scl-join-logo{width:300px}
+.scl-founder-choice strong{font-size:60px}
+.scl-founder-rates>b{line-height:60px}
+.scl-join-start{max-width:580px}
+.scl-join-scope{font-size:14px!important}
+}
+@media(max-width:460px){
+.scl-founder-rates{gap:10px}
+.scl-founder-choice strong{font-size:48px}
+.scl-founder-choice>span{font-size:14px;gap:6px}
+.scl-founder-rates>b{font-size:27px;line-height:48px}
+.scl-join-logo{width:270px}
+.scl-join-standard{gap:10px}
+.scl-join-standard>div{min-width:0;flex:1;padding:12px}
+.scl-join-standard strong{font-size:24px}
+.scl-join-standard small{font-size:13px}
+.scl-join-start>strong{font-size:58px}
+.scl-join-start{gap:16px}
+.scl-join-offer>.scl-button{font-size:15px;gap:15px}
+}
+body:not(.original) .school-landing #interes .scl-join-scope{font:400 14px/1.5 Inter,sans-serif!important}
+
+body.school-standalone{padding:0!important;background:#fff;--chrome-h:76px;color:#171f1a}html{scroll-padding-top:94px}.school-standalone-header{position:sticky;top:0;z-index:60;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px;padding:14px 4%;background:#080808;border-bottom:1px solid #d2ac5833}.school-standalone-brand{display:block;flex-shrink:0}.school-standalone-brand img{display:block;width:210px;max-width:100%;height:auto}.school-standalone-header nav{position:static;inset:auto;display:flex;gap:26px;align-items:center;justify-content:center;flex:none;visibility:visible;opacity:1;transform:none;box-shadow:none;width:auto;max-height:none;background:none;padding:0;white-space:normal}.school-standalone-header nav a{padding:8px 0;font:500 14px/1.4 Inter,sans-serif;letter-spacing:0;color:#f5f3ed}.school-standalone-header nav a:hover{color:#e1bd6e}.school-standalone-header .standalone-enroll{border:1px solid #d2ac58;border-radius:5px;padding:11px 17px;font:500 14px/1.4 Inter,sans-serif;color:#e1bd6e;white-space:nowrap}.school-standalone-header .standalone-enroll:hover{background:#d2ac58;color:#121617}.school-standalone main{padding:0;margin:0}.school-standalone .scl-hero{min-height:calc(100svh - var(--chrome-h));display:flex;flex-direction:column;padding-top:30px}.school-standalone .scl-hero-inner{flex:1;min-height:0;max-height:none;width:100%;padding-bottom:20px}.school-standalone .scl-hero>.page-cover-cue{margin:0 auto 14px;flex:none}.school-standalone .school-standalone-footer{background:#000;color:#d0d5cd;padding:32px 6%;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}.school-standalone-footer p{font:400 13px/1.5 Inter,sans-serif;margin:0;color:#b7bfb4}.school-standalone-footer .standalone-legal{display:flex;gap:20px;flex-wrap:wrap}.standalone-legal button{font:400 13px/1.5 Inter,sans-serif;color:#c9d0c4;padding:8px 0}.standalone-legal button:hover{color:#e1bd6e}.standalone-legal-copy p{font:400 16px/1.5 Inter,sans-serif!important}.standalone-legal-copy h2{font:600 27px/1.25 Inter,sans-serif!important;text-transform:none!important;letter-spacing:0!important}.school-standalone dialog{max-height:86svh;overflow:auto}.school-standalone .scl-filter-defs{position:absolute;pointer-events:none}
+@media(max-width:1100px){.school-standalone-header nav{gap:17px}.school-standalone-brand img{width:180px}.school-standalone-header nav a{font-size:13px}.school-standalone-header{gap:18px}}@media(max-width:850px){.school-standalone-header nav{display:none}.school-standalone-header{min-height:70px;padding:15px 5%}.school-standalone-brand img{width:175px}.school-standalone .scl-hero{min-height:0}.school-standalone .scl-hero-inner{min-height:0}.school-standalone-footer{align-items:flex-start!important;flex-direction:column}}@media(max-width:420px){.school-standalone-brand img{width:150px}.school-standalone-header .standalone-enroll{font-size:12px;padding:10px 11px}.school-standalone-header{gap:12px}}
+
+/* Narrow screens: prevent intrinsic grid content and the header from overflowing. */
+@media (max-width:389px){
+ .school-standalone .scl-hero-inner{grid-template-columns:minmax(0,1fr)}
+ .school-standalone .scl-hero-copy{min-width:0}
+ body:not(.original) .school-landing #scl-title{font-size:clamp(28px,calc(12.5vw - 7px),44px)!important}
+ .school-standalone .scl-house-cover{min-width:0;max-width:min(310px,100%)}
+}
+@media (max-width:360px){
+ .school-standalone-header{gap:8px;padding-inline:4%}
+ .school-standalone-brand img{width:112px}
+}
+
+/* Standalone legal pages: scoped reading layout, no changes to the landing. */
+body.school-legal-page{--body-copy-size:15px;background:#121617;color:#eeede7;line-height:1.6}
+.school-legal-page .school-standalone-header{position:relative}
+.school-legal-main{width:calc(100% - 40px);max-width:760px;margin:0 auto;padding:56px 0 72px}
+body.school-legal-page .school-legal-copy h1{font:600 clamp(26px,3.2vw,36px)/1.2 Inter,sans-serif!important;letter-spacing:-.025em;color:#e1bd6e;margin:0 0 40px;overflow-wrap:anywhere}
+body.school-legal-page .school-legal-copy h2{font:600 clamp(18px,2vw,21px)/1.35 Inter,sans-serif!important;letter-spacing:0;color:#f5f3ed;margin:36px 0 12px}
+.school-legal-copy p,.school-legal-copy li{font:400 15px/1.65 Inter,sans-serif;margin:0 0 18px;overflow-wrap:anywhere}
+.school-legal-copy a{color:#e1bd6e;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.school-legal-copy a:hover{color:#f5d897}
+.school-legal-page a:focus-visible{outline:2px solid #e1bd6e;outline-offset:4px}
+.school-legal-footer{display:block;background:#000;padding:30px max(20px,4%);border-top:1px solid #d2ac5833;color:#cbd0c8}
+.school-legal-footer p{font:400 13px/1.6 Inter,sans-serif;margin:0 0 18px;overflow-wrap:anywhere}
+.school-legal-footer nav{position:static;inset:auto;display:flex;justify-content:flex-start;flex-wrap:wrap;gap:12px 24px;white-space:normal;background:transparent;padding:0;max-height:none;overflow:visible;border:0;flex:none;width:auto}
+.school-legal-footer nav a{font:500 14px/1.5 Inter,sans-serif;letter-spacing:0;padding:6px 0}
+.school-legal-footer nav a[aria-current="page"]{color:#e1bd6e;text-decoration:underline;text-underline-offset:4px}
+.school-standalone-footer .standalone-legal a{font:400 13px/1.5 Inter,sans-serif;color:#c9d0c4;padding:8px 0}
+.school-standalone-footer .standalone-legal a:hover{color:#e1bd6e}
+@media(max-width:600px){.school-legal-main{padding-top:36px;padding-bottom:48px}.school-legal-page .school-standalone-header{gap:12px}.school-legal-page .standalone-enroll{white-space:normal;text-align:center}.school-legal-footer nav{gap:10px 20px}}
+
+/* Escuela: precios informativos y elección dentro del único formulario de inscripción. */
+.school-landing .scl-join-offer>.scl-button:hover{background:#1a4a42;color:#e1bd6e}
+.scl-founder-rates>.scl-founder-choice{cursor:default}
+.scl-founder-rates>.scl-founder-choice:hover strong{color:inherit}
+.scl-enrollment-options{border:0;padding:0;margin:24px 0;min-width:0}
+.scl-enrollment-options legend{font:600 18px/1.5 Inter,sans-serif;color:#fff;margin-bottom:14px}
+.scl-enrollment-choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.scl-enrollment-choices label{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid #b4965366;border-radius:8px;color:#fff;cursor:pointer;min-width:0}
+.scl-enrollment-choices label:has(input:checked){border-color:#e1bd6e;background:#e1bd6e18}
+.scl-enrollment-choices label:has(input:focus-visible){outline:2px solid #e1bd6e;outline-offset:3px}
+.scl-enrollment-choices input{width:18px;height:18px;accent-color:#e1bd6e;flex-shrink:0}
+.scl-enrollment-choices span{font:400 16px/1.5 Inter,sans-serif}
+.scl-enrollment-choices strong{display:block;font:600 22px/1.5 Inter,sans-serif;color:#e1bd6e}
+.school-checkout .scl-modal-confirm:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:460px){.scl-enrollment-choices{grid-template-columns:1fr}.school-checkout .scl-modal-confirm{font-size:16px}}
+
+/* Editorial closing note for the introductory copy. */
+.scl-hero-reflection{margin-top:32px;padding-top:24px;border-top:1px solid #d2ac5833}
+.scl-hero-copy .scl-hero-reflection-main{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:0;font:400 16px/1.5 Inter,sans-serif!important;color:#e5e9e0!important}
+.scl-hero-reflection-main strong{font-weight:600;color:#e1bd6e}
+.scl-hero-copy .scl-hero-reflection-close{display:flex;align-items:center;gap:12px;margin:17px 0 0;font:500 11px/1.5 Inter,sans-serif!important;letter-spacing:.12em;text-transform:uppercase;color:#b9c5ba!important}
+.scl-hero-reflection-close::before{content:"";width:28px;height:1px;flex-shrink:0;background:#d2ac58}
+@media(max-width:760px){.scl-hero-copy .scl-hero-reflection-main{font-size:15px!important}.scl-hero-copy .scl-hero-reflection-close{font-size:10px!important;letter-spacing:.08em}}
+
+.scl-house-cover .scl-house-belonging{display:grid;gap:6px;font:400 17px/1.5 Inter,sans-serif;text-align:center}.scl-house-belonging span:first-child{color:#f1f0e7}.scl-house-belonging span:last-child{color:#e1bd6e}
+
+/* Recognition: six everyday questions and one shared reflection. */
+.scl-recognize-heading{display:block;margin-bottom:40px}
+.scl-recognize-heading h2{margin-bottom:0}.scl-recognize-heading h2 span{color:#ad8333}
+.scl-recognize .scl-recognize-intro{margin:24px 0 0;color:#576459!important}
+.scl-recognize-questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:54px;list-style:none;padding:0;margin:0}
+.scl-recognize-questions li{display:flex;align-items:flex-start;gap:20px;padding:25px 0;border-top:1px solid #d9ddD3;min-width:0}
+.scl-recognize-questions li>span{display:grid;place-items:center;flex:0 0 36px;height:36px;border:1px solid #d2ac5855;border-radius:50%;background:#fbf8f0;color:#99722a;font:500 12px/1 Inter,sans-serif}
+.scl-recognize .scl-recognize-questions p{margin:3px 0 0;font:400 18px/1.5 Inter,sans-serif!important;color:#27352d!important}
+.scl-recognize-insight{display:flex;align-items:center;margin-top:27px;padding:30px 34px;background:#0d3b36;border:0;border-radius:6px}
+.scl-recognize .scl-recognize-insight p{max-width:none;margin:0!important;font:400 21px/1.5 Inter,sans-serif!important;color:#f1f0e7!important}
+.scl-recognize-insight strong{font-weight:600;color:#e1bd6e}
+@media(max-width:900px){.scl-recognize-heading{grid-template-columns:1fr;gap:22px}.scl-recognize-questions{column-gap:30px}}
+@media(max-width:600px){.scl-recognize-heading{margin-bottom:29px}.scl-recognize-questions{grid-template-columns:1fr}.scl-recognize-questions li{padding:20px 0;gap:15px}.scl-recognize .scl-recognize-questions p{font-size:16px!important}.scl-recognize-insight{padding:22px;margin-top:20px}.scl-recognize .scl-recognize-insight p{font-size:18px!important}}
+
+/* A view of the world: comparable presentation, distinct source populations. */
+.scl-world-heading{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-bottom:52px}
+.scl-world-heading h2{margin-bottom:0}.scl-world-heading>p{margin:0!important;max-width:570px}
+.scl-world-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.scl-world-grid article{display:flex;flex-direction:column;align-items:flex-start;border-top:1px solid #d2ac584d;padding-top:24px;min-width:0}
+body:not(.original) .school-landing .scl-world .scl-world-grid h3{margin:0 0 20px;font:500 12px/1.5 Inter,sans-serif!important;letter-spacing:.09em;text-transform:uppercase;color:#becbbe}
+.scl-world-number{font:600 62px/1.1 Inter,sans-serif;letter-spacing:.015em;color:#e1bd6e;margin-bottom:22px;white-space:nowrap}
+body:not(.original) .school-landing .scl-world .scl-world-grid p{font:400 16px/1.5 Inter,sans-serif!important;margin:0 0 24px!important}
+.scl-world-grid a{margin-top:auto;font:400 12px/1.5 Inter,sans-serif;color:#c2cdc1;text-decoration:underline;text-underline-offset:4px}
+.scl-world-grid a:hover{color:#e1bd6e}.scl-world-grid a:focus-visible{outline:2px solid #e1bd6e;outline-offset:5px}
+body:not(.original) .school-landing .scl-world .scl-world-note{margin:30px 0 0!important;font:400 13px/1.5 Inter,sans-serif!important;color:#aebbb0!important;max-width:none}
+.scl-world-question{margin-top:36px;border-top:1px solid #d2ac5840;padding-top:28px}
+body:not(.original) .school-landing .scl-world .scl-world-question p{font:400 25px/1.5 Inter,sans-serif!important;margin:0!important;max-width:1040px;color:#f1f0e7!important}
+.scl-world-question strong{font-weight:500;color:#e1bd6e}
+@media(max-width:1000px){.scl-world-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:35px}.scl-world-heading{gap:35px}}
+@media(max-width:600px){.scl-world-heading{grid-template-columns:1fr;gap:24px;margin-bottom:34px}.scl-world-grid{gap:28px 22px}.scl-world-number{font-size:42px}body:not(.original) .school-landing .scl-world .scl-world-grid h3{font-size:10px!important;letter-spacing:.04em}body:not(.original) .school-landing .scl-world .scl-world-grid p{font-size:15px!important}body:not(.original) .school-landing .scl-world .scl-world-question p{font-size:21px!important}}
+@media(max-width:360px){.scl-world-grid{grid-template-columns:1fr}}
+
+/* Human understanding: what we learned, and the person learning. */
+.scl-human{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:70px;align-items:stretch}
+.scl-human-learning h2{margin-bottom:24px}.scl-human-learning h2 span{color:#ad8333}
+.scl-human-intro{max-width:560px}
+.scl-human-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;padding:0;margin:30px 0 0;list-style:none}
+.scl-human-topics li{border-bottom:1px solid #cbd0c4;padding:17px 0;color:#344237;font:400 16px/1.5 Inter,sans-serif}
+.scl-human-you{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;border-left:1px solid #c4b48280;padding-left:64px;min-width:0}
+body:not(.original) .school-landing .scl-human-you h3{font:600 clamp(110px,12vw,210px)/1 Inter,sans-serif!important;letter-spacing:-.04em;color:#0d3b36;margin:0 0 30px!important}
+body:not(.original) .school-landing .scl-human-you .scl-human-tool{font:400 21px/1.5 Inter,sans-serif!important;color:#26392d!important;margin:0 0 26px!important;max-width:430px}
+body:not(.original) .school-landing .scl-human-you .scl-human-possibility{font:400 18px/1.5 Inter,sans-serif!important;color:#5a665b!important;margin:0!important;max-width:430px}
+.scl-human-possibility strong{font-weight:600;color:#0d3b36}
+@media(max-width:1000px){.scl-human{gap:38px}.scl-human-you{padding-left:34px}.scl-human-topics{column-gap:20px}}
+@media(max-width:700px){.scl-human{grid-template-columns:1fr;gap:38px}.scl-human-you{border-left:0;border-top:1px solid #c4b48280;padding:32px 0 0}.scl-human-topics li{font-size:15px}.scl-human-you h3{margin-bottom:22px!important}body:not(.original) .school-landing .scl-human-you .scl-human-tool{font-size:20px!important}}
+@media(max-width:380px){.scl-human-topics{grid-template-columns:1fr}}
+
+/* A familiar tool, and the possibilities still to discover. */
+.scl-potential{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:80px;align-items:center}
+.scl-potential-art{margin:0;min-width:0;max-width:500px;width:100%;justify-self:center}
+.scl-potential-labels{display:flex;justify-content:space-between;gap:20px;font:500 11px/1.5 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#e0c58d}
+.scl-potential-art svg{display:block;width:100%;height:auto;margin:20px 0 12px}
+.scl-potential-art figcaption{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 23px;border-top:1px solid #d2ac5840;padding-top:20px;font:400 13px/1.5 Inter,sans-serif;color:#d7e1d4}
+.scl-potential-copy{min-width:0}.scl-potential-copy h2{margin-bottom:28px}
+body:not(.original) .school-landing .scl-potential-copy p:not(.eyebrow){font:400 18px/1.5 Inter,sans-serif!important;margin:0 0 20px!important;color:#dce4d9!important}
+.scl-potential-copy strong{font-weight:600;color:#f7f3e8}
+body:not(.original) .school-landing .scl-potential-copy .scl-potential-connection{margin-top:28px!important}
+body:not(.original) .school-landing .scl-potential-copy .scl-potential-ending{margin:26px 0 0!important;padding-top:23px;border-top:1px solid #d2ac5840}.scl-potential-ending strong{color:#e1bd6e}
+@media(max-width:1000px){.scl-potential{gap:40px;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr)}.scl-potential-labels{font-size:10px;letter-spacing:.03em}}
+@media(max-width:760px){.scl-potential{grid-template-columns:1fr;gap:38px}.scl-potential-copy{grid-row:1}.scl-potential-art{max-width:420px}.scl-potential-copy h2{margin-bottom:24px}body:not(.original) .school-landing .scl-potential-copy p:not(.eyebrow){font-size:17px!important}}
+
+/* The technology of change: editorial copy and a connected path. */
+.scl-change-columns{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:76px;align-items:center}
+.scl-change-intro h2{margin-bottom:25px}.scl-change-intro h2 span{color:#ad8333}
+.scl-change-intro>p:last-child{max-width:620px;margin-bottom:0!important}
+.scl-change-explanation{border-left:1px solid #d2ac5866;padding-left:36px}
+body:not(.original) .school-landing .scl-change-explanation p{font:400 18px/1.5 Inter,sans-serif!important;margin:0 0 25px!important;color:#526054!important}
+body:not(.original) .school-landing .scl-change-explanation p:last-child{margin-bottom:0!important}
+.scl-change-explanation strong{font-weight:600;color:#0d3b36}
+.scl-change-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px;list-style:none;padding:0;margin:48px 0 0}
+.scl-change-path li{display:flex;align-items:center;gap:18px;padding:26px 0;border-top:1px solid #c8b47e;min-width:0}
+.scl-change-step{font:400 14px/1 Inter,sans-serif;color:#aa8439;align-self:flex-start;margin-top:8px}
+body:not(.original) .school-landing .scl-change-path h3{margin:0!important;font:400 16px/1.5 Inter,sans-serif!important;text-transform:none;letter-spacing:0;color:#566454}
+body:not(.original) .school-landing .scl-change-path h3 strong{font-size:23px!important;font-weight:600!important;color:#0d3b36}
+.scl-change-path svg{width:30px;height:24px;flex-shrink:0;margin-left:auto;fill:none;stroke:#ad8333;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1000px){.scl-change-columns{gap:36px}.scl-change-path{gap:22px}.scl-change-path li{gap:12px}body:not(.original) .school-landing .scl-change-path h3 strong{font-size:20px!important}}
+@media(max-width:760px){.scl-change-columns{grid-template-columns:1fr;gap:28px}.scl-change-explanation{padding-left:23px}.scl-change-path{grid-template-columns:1fr;margin-top:34px;gap:0}.scl-change-path li{padding:22px 0}.scl-change-path svg{transform:rotate(90deg);margin-right:8px}.scl-change-path h3 br{display:none}body:not(.original) .school-landing .scl-change-path h3 strong{font-size:21px!important;margin-left:5px}}
+
+/* Three planes of a single experience. */
+.scl-flight-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:70px;align-items:center;margin-bottom:48px}
+.scl-flight-heading h2{margin-bottom:0}.scl-flight-heading>p{max-width:500px;margin:0!important}
+.scl-flight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px}
+.scl-flight-grid article{display:flex;flex-direction:column;min-width:0;border-top:1px solid #d2ac5870;padding-top:25px}
+body:not(.original) .school-landing .scl-flight .scl-flight-role{font:500 12px/1.5 Inter,sans-serif!important;letter-spacing:.08em;margin:0 0 22px!important;color:#e1bd6e!important}
+body:not(.original) .school-landing .scl-flight-grid h3{font:600 30px/1.2 Inter,sans-serif!important;color:#f1f0e7;text-transform:uppercase;margin:0 0 10px!important}
+body:not(.original) .school-landing .scl-flight .scl-flight-plane{font:500 11px/1.5 Inter,sans-serif!important;letter-spacing:.06em;min-height:34px;margin:0 0 20px!important;color:#afbeb0!important}
+body:not(.original) .school-landing .scl-flight .scl-flight-description{font:400 18px/1.5 Inter,sans-serif!important;margin:0 0 28px!important;color:#d6dfd5!important}
+body:not(.original) .school-landing .scl-flight .scl-flight-purpose{font:500 16px/1.5 Inter,sans-serif!important;border-top:1px solid #d2ac5833;padding-top:20px;margin:auto 0 0!important;color:#e1bd6e!important}
+.scl-flight-close{margin-top:40px;border-left:2px solid #d2ac58;padding:2px 0 2px 24px}
+body:not(.original) .school-landing .scl-flight .scl-flight-close p{font:400 20px/1.5 Inter,sans-serif!important;max-width:1100px;margin:0!important;color:#d6dfd5!important}.scl-flight-close strong{color:#f1f0e7;font-weight:500}
+@media(max-width:1000px){.scl-flight-heading{gap:35px}.scl-flight-grid{gap:25px}body:not(.original) .school-landing .scl-flight .scl-flight-description{font-size:16px!important}}
+@media(max-width:700px){.scl-flight-heading{grid-template-columns:1fr;gap:24px;margin-bottom:32px}.scl-flight-grid{grid-template-columns:1fr;gap:32px}.scl-flight-grid article{padding-top:23px}body:not(.original) .school-landing .scl-flight .scl-flight-plane{min-height:0;margin-bottom:18px!important}body:not(.original) .school-landing .scl-flight .scl-flight-role{margin-bottom:17px!important}body:not(.original) .school-landing .scl-flight .scl-flight-close p{font-size:18px!important}}
+
+/* From understanding to the ability to act. */
+.scl-practice-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:70px;align-items:center;margin-bottom:45px}
+.scl-practice-heading h2{margin-bottom:0}.scl-practice-heading h2 span{color:#ad8333}.scl-practice-heading>p{margin:0!important;max-width:500px}.scl-practice-heading>p strong{color:#0d3b36;font-weight:600}
+.scl-practice-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;list-style:none;padding:0;margin:0}
+.scl-practice-path li{min-width:0;border-top:1px solid #b99a54;padding-top:20px}
+.scl-practice-count{display:flex;align-items:center;justify-content:space-between;color:#a67e30;height:35px;margin-bottom:19px;font:500 13px/1 Inter,sans-serif}
+.scl-practice-count>span{display:grid;place-items:center;width:34px;height:34px;background:#f6f3eb;border-radius:50%}
+.scl-practice-count svg,.scl-practice-close svg{width:26px;height:22px;fill:none;stroke:#ad8333;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+body:not(.original) .school-landing .scl-practice-path h3{font:600 23px/1.3 Inter,sans-serif!important;text-transform:uppercase;letter-spacing:0;margin:0 0 16px!important;color:#0d3b36}
+body:not(.original) .school-landing .scl-practice-path p{font:400 16px/1.5 Inter,sans-serif!important;margin:0!important;color:#455348!important}
+.scl-practice-close{display:flex;align-items:center;gap:24px;margin-top:42px;padding-top:25px;border-top:1px solid #d9ddD3;font:500 13px/1.5 Inter,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#5b685b}.scl-practice-close strong{font-weight:600;color:#ad8333}
+@media(max-width:1000px){.scl-practice-heading{gap:35px}.scl-practice-path{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}}
+@media(max-width:650px){.scl-practice-heading{grid-template-columns:1fr;gap:25px;margin-bottom:34px}.scl-practice-path{grid-template-columns:1fr;gap:28px}.scl-practice-count{margin-bottom:15px}.scl-practice-count svg{transform:rotate(90deg)}.scl-practice-close{gap:16px;letter-spacing:.08em;font-size:12px}.scl-practice-close svg{width:22px}}
+
+/* Welcome home: the existing brand integrated into the dark surface. */
+.school-landing .scl-welcome{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:85px;align-items:center;background:radial-gradient(ellipse at 85% 50%,#18352d66,transparent 65%),#121617}
+.scl-welcome-copy h2{margin-bottom:29px}
+body:not(.original) .school-landing .scl-welcome-copy p:not(.eyebrow){font:400 18px/1.5 Inter,sans-serif!important;margin:0 0 23px!important;color:#d4dfd3!important}
+.scl-welcome-copy strong{font-weight:600;color:#f1f0e7}
+body:not(.original) .school-landing .scl-welcome-copy p.scl-welcome-close{margin:30px 0 0!important;padding-top:24px;border-top:1px solid #d2ac5844;color:#e1bd6e!important}
+.scl-welcome-brand{margin:0;min-width:0;text-align:center}.scl-welcome-brand img{display:block;width:100%;max-width:460px;height:auto;margin:0 auto;filter:url(#scl-welcome-ink)}
+.scl-welcome-brand figcaption{display:grid;gap:5px;margin-top:30px;font:400 14px/1.5 Inter,sans-serif;color:#bac9bb}.scl-welcome-brand figcaption span:first-child{font-size:17px;color:#e1bd6e}
+@media(max-width:1000px){.school-landing .scl-welcome{gap:42px}}
+@media(max-width:760px){.school-landing .scl-welcome{grid-template-columns:1fr;gap:42px}.scl-welcome-brand img{max-width:380px}.scl-welcome-brand figcaption{margin-top:22px}body:not(.original) .school-landing .scl-welcome-copy p:not(.eyebrow){font-size:17px!important}}
+
+/* A living school: two meetings and private content, in balance. */
+.scl-live-heading{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:70px;align-items:center;margin-bottom:42px}
+.scl-live-heading h2{margin-bottom:0}.scl-live-heading h2 span{color:#ad8333}.scl-live-heading>p{margin:0!important}
+.scl-live-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.scl-live-grid article{display:flex;flex-direction:column;min-width:0;padding:29px 28px;border:1px solid #d8d8ca;border-radius:6px;background:#fff}
+.scl-live-grid article.scl-live-main{background:#0d3b36;border-color:#0d3b36}
+.scl-live-card-top{display:flex;align-items:flex-start;gap:15px;margin-bottom:23px;min-height:48px}
+.scl-live-card-top>span{font:400 29px/1 Inter,sans-serif;color:#c09b4c;flex-shrink:0}
+body:not(.original) .school-landing .scl-live .scl-live-card-top p{font:500 10px/1.6 Inter,sans-serif!important;letter-spacing:.06em;color:#9a752e!important;margin:0!important}
+body:not(.original) .school-landing .scl-live .scl-live-main .scl-live-card-top p{color:#e1bd6e!important}
+body:not(.original) .school-landing .scl-live-grid h3{font:600 25px/1.3 Inter,sans-serif!important;text-transform:uppercase;letter-spacing:0;color:#0d3b36;margin:0 0 23px!important;min-height:65px}
+body:not(.original) .school-landing .scl-live-grid article>p,body:not(.original) .school-landing .scl-live-card-close p{font:400 16px/1.5 Inter,sans-serif!important;color:#526054!important;margin:0 0 23px!important}
+body:not(.original) .school-landing .scl-live-grid .scl-live-main h3{color:#f1f0e7}
+body:not(.original) .school-landing .scl-live-grid .scl-live-main>p{color:#d6e1d4!important}
+.scl-live-time{padding:4px 0 25px}.scl-live-time>div{display:flex;align-items:center;gap:14px;margin-bottom:13px}
+.scl-live-time strong{font:500 49px/1 Inter,sans-serif;color:#e1bd6e;letter-spacing:.01em}.scl-live-time span{font:400 12px/1.5 Inter,sans-serif;color:#e1bd6e}
+body:not(.original) .school-landing .scl-live .scl-live-time p{font:400 14px/1.5 Inter,sans-serif!important;color:#d6e1d4!important;margin:0!important}
+body:not(.original) .school-landing .scl-live-grid article>.scl-live-main-close{margin:auto 0 0!important;padding-top:22px;border-top:1px solid #d2ac5855;font-size:13px!important}
+.scl-live-card-close{margin-top:auto;padding-top:22px;border-top:1px solid #d8d8ca}.scl-live-card-close strong{font-weight:600;color:#0d3b36}
+body:not(.original) .school-landing .scl-live-card-close p{margin:0!important}
+body:not(.original) .school-landing .scl-live .scl-live-delivery{display:flex;align-items:center;gap:14px;font:400 14px/1.5 Inter,sans-serif!important;color:#526054!important;margin:25px 0 0!important}
+.scl-live-delivery svg{width:22px;height:22px;flex-shrink:0;fill:none;stroke:#ad8333;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1100px){.scl-live-heading{gap:35px}.scl-live-grid{gap:16px}.scl-live-grid article{padding:25px 22px}body:not(.original) .school-landing .scl-live-grid h3{font-size:22px!important}}
+@media(max-width:850px){.scl-live-heading{grid-template-columns:1fr;gap:25px}.scl-live-grid{grid-template-columns:1fr}.scl-live-card-top{min-height:0}body:not(.original) .school-landing .scl-live-grid h3{min-height:0}.scl-live-grid article{padding:28px}.scl-live-card-close{margin-top:5px}}
+
+.school-landing #encuentro-escuela.scl-live{display:block;background:#f6f2e8}
+
+.scl-live-content-art{margin-top:auto;padding-top:20px}.scl-live-content-art svg{display:block;width:180px;max-width:80%;height:auto;margin:0 auto}
+
+/* The private salon: belonging and presence, with clear boundaries. */
+.school-landing #salon-escuela.scl-salon-space{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr);gap:85px;align-items:center;background:#121617}
+.scl-salon-space-copy h2{margin-bottom:28px}
+body:not(.original) .school-landing .scl-salon-space-copy p:not(.eyebrow){font:400 18px/1.5 Inter,sans-serif!important;color:#dce4d9!important;margin:0 0 22px!important;max-width:650px}
+body:not(.original) .school-landing .scl-salon-space-copy p:last-child{margin-bottom:0!important}
+.scl-salon-presence{border-left:1px solid #d2ac5866;padding-left:42px;min-width:0}
+.scl-salon-presence svg{display:block;width:96px;height:96px;fill:none;stroke:#d2ac58;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:27px}
+body:not(.original) .school-landing .scl-salon-presence h3{font:600 29px/1.3 Inter,sans-serif!important;color:#f1f0e7;margin:0 0 22px!important;letter-spacing:0}.scl-salon-presence h3 span{color:#e1bd6e}
+body:not(.original) .school-landing .scl-salon-presence p{font:400 16px/1.5 Inter,sans-serif!important;margin:0!important;color:#d0ddce!important}
+@media(max-width:1000px){.school-landing #salon-escuela.scl-salon-space{gap:40px}.scl-salon-presence{padding-left:30px}}
+@media(max-width:700px){.school-landing #salon-escuela.scl-salon-space{grid-template-columns:1fr;gap:32px}.scl-salon-presence{border-left:0;border-top:1px solid #d2ac5866;padding:28px 0 0}.scl-salon-presence svg{width:76px;height:76px;margin-bottom:22px}body:not(.original) .school-landing .scl-salon-space-copy p:not(.eyebrow){font-size:17px!important}}
+
+/* The first shared journey begins with the person creating. */
+.scl-first-journey{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:80px;align-items:center}
+.scl-journey-copy h2{margin-bottom:27px}.scl-journey-copy h2 span{color:#ad8333}
+body:not(.original) .school-landing .scl-first-journey .scl-journey-start{font:500 20px/1.5 Inter,sans-serif!important;margin:0 0 20px!important;color:#0d3b36!important}.scl-journey-start strong{font-weight:500}
+.scl-journey-copy>p:last-of-type{max-width:620px;margin-bottom:0!important}
+.scl-journey-tags{display:flex;gap:22px;flex-wrap:wrap;list-style:none;padding:0;margin:28px 0 0}
+.scl-journey-tags li{font:500 12px/1.5 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#0d3b36;padding:0 0 9px;border-bottom:1px solid #b49448}
+.scl-journey-question{padding:34px 38px;border-top:2px solid #c3a15c;background:#f6f3eb;border-radius:0 0 6px 6px}
+body:not(.original) .school-landing .scl-journey-question h3{font:600 32px/1.3 Inter,sans-serif!important;letter-spacing:0;text-transform:uppercase;color:#0d3b36;margin:24px 0!important}.scl-journey-question h3 span{color:#ad8333}
+body:not(.original) .school-landing .scl-journey-question p{font:400 18px/1.5 Inter,sans-serif!important;margin:0!important;color:#536154!important}
+@media(max-width:1000px){.scl-first-journey{gap:40px}.scl-journey-question{padding:30px}}
+@media(max-width:700px){.scl-first-journey{grid-template-columns:1fr;gap:34px}.scl-journey-question{padding:26px}body:not(.original) .school-landing .scl-journey-question h3{font-size:28px!important}}
+
+/* A connected map of a whole life. */
+.scl-map-heading{margin-bottom:42px}.scl-map-heading h2{margin-bottom:25px}.scl-map-heading>p:last-child{max-width:830px;margin-bottom:0!important}
+.scl-map-body{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:75px;align-items:start}
+.scl-map-numbers{display:grid;grid-template-columns:1fr 1fr;gap:28px 38px;margin:0 0 30px}
+.scl-map-numbers>div{display:flex;flex-direction:column-reverse;align-items:flex-start;border-top:1px solid #d2ac5840;padding-top:18px}
+.scl-map-numbers dt{font:500 11px/1.5 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#becbbb;margin-top:12px}
+.scl-map-numbers dd{font:500 65px/1 Inter,sans-serif;letter-spacing:.01em;color:#e1bd6e;margin:0}
+body:not(.original) .school-landing .scl-map-summary>p{font:400 16px/1.5 Inter,sans-serif!important;color:#bac9bb!important;margin:0!important;max-width:420px}
+.scl-map-forces{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;list-style:none;padding:0;margin:0}
+.scl-map-forces li{display:flex;align-items:baseline;gap:14px;min-width:0;border-bottom:1px solid #d2ac5838;padding:22px 0;font:400 16px/1.5 Inter,sans-serif;color:#e1e7dc}
+.scl-map-forces li>span{flex-shrink:0;font:500 11px/1.5 Inter,sans-serif;color:#d2ac58}
+@media(max-width:1000px){.scl-map-body{gap:38px}.scl-map-forces{column-gap:22px}.scl-map-forces li{font-size:15px}}
+@media(max-width:700px){.scl-map-body{grid-template-columns:1fr;gap:30px}.scl-map-numbers{gap:24px 30px}.scl-map-numbers dd{font-size:56px}.scl-map-summary>p{max-width:none}.scl-map-forces{grid-template-columns:1fr}.scl-map-forces li{padding:18px 0;font-size:16px}.scl-map-heading{margin-bottom:30px}}
+
+/* Choosing with purpose: two calm, clearly differentiated perspectives. */
+.scl-fit>.eyebrow{margin-bottom:29px}
+.scl-fit-columns{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.scl-fit-columns>div{padding:28px 30px;border-top:2px solid #b89a54;border-radius:0 0 6px 6px;background:#faf8f1}
+.scl-fit-columns>.scl-fit-negative{border-top-color:#b7c1b5;background:#f2f4ef}
+body:not(.original) .school-landing .scl-fit-columns h2{font:600 30px/1.3 Inter,sans-serif!important;text-transform:uppercase;letter-spacing:-.02em;color:#0d3b36;margin:0 0 24px!important;min-height:78px}
+.scl-fit-positive h2 span{color:#ad8333}
+.scl-fit-columns ul{list-style:none;padding:0;margin:0}
+.scl-fit-columns li{display:flex;align-items:flex-start;gap:13px;padding:17px 0;border-bottom:1px solid #d9ded1;font:400 16px/1.5 Inter,sans-serif;color:#344237}
+.scl-fit-columns li:last-child{border-bottom:0;padding-bottom:0}
+.scl-fit-columns li svg{width:21px;height:21px;flex-shrink:0;margin-top:1px;fill:none;stroke:#ad8333;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.scl-fit-negative li svg{stroke:#7e8b7b}
+@media(max-width:1000px){.scl-fit-columns{gap:28px}.scl-fit-columns>div{padding:25px}}
+@media(max-width:700px){.scl-fit-columns{grid-template-columns:1fr;gap:30px}.scl-fit-columns>div{padding:24px}body:not(.original) .school-landing .scl-fit-columns h2{font-size:27px!important;min-height:0}.scl-fit-columns li{font-size:16px;padding:16px 0}}
+
+/* Founding generation: existing brand, clear prices and current enrollment flow. */
+.scl-founders-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:75px;align-items:stretch}
+.scl-founders-story h2{margin-bottom:28px}.scl-founders-story h2 span{color:#9e7429}
+body:not(.original) .school-landing .scl-founders-story>p{font:400 18px/1.5 Inter,sans-serif!important;color:#3d4c3d!important;margin:0 0 23px!important}
+body:not(.original) .school-landing .scl-founders-story>p.eyebrow{font:600 12px/1.5 Inter,sans-serif!important;letter-spacing:.09em;color:#99752d!important}
+body:not(.original) .school-landing .scl-founders-story>.scl-founders-lead{font-size:21px!important;color:#213d30!important}
+body:not(.original) .school-landing .scl-founders-story>.scl-founders-recognition{border-left:2px solid #ae8b42;padding-left:20px;font-size:16px!important}
+.scl-founders-benefits{list-style:none;padding:0;margin:30px 0}.scl-founders-benefits li{display:flex;gap:13px;border-bottom:1px solid #c3b79588;padding:13px 0;font:400 16px/1.5 Inter,sans-serif;color:#2e4635}.scl-founders-benefits li::before{content:"✓";color:#9d742c;font-weight:600}
+.scl-founders-limit{background:#0d3b36;border-radius:5px;padding:23px 25px;margin-top:27px}.scl-founders-limit>strong{font:600 25px/1.3 Inter,sans-serif;color:#e1bd6e;text-transform:uppercase}
+body:not(.original) .school-landing .scl-founders-limit p{font:400 14px/1.5 Inter,sans-serif!important;color:#e2e8da!important;margin:9px 0 0!important}
+.scl-founders-dates{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:28px}.scl-founders-dates>div{display:flex;flex-direction:column;gap:8px}.scl-founders-dates span{font:500 11px/1.5 Inter,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#5b6551}.scl-founders-dates strong{font:600 16px/1.5 Inter,sans-serif;color:#0d3b36}
+body:not(.original) .school-landing .scl-founders-dates p{font:400 13px/1.5 Inter,sans-serif!important;margin:0!important;color:#59634f!important}
+.scl-founders-offer{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #d4c393;border-radius:5px;padding:22px 30px}
+.scl-founders-offer>.scl-join-logo{width:min(165px,70%);margin:0 auto 14px;filter:url(#scl-paper-removal)}
+.scl-founders-price{display:flex;flex-direction:column;justify-content:space-between;gap:12px;flex:1;min-height:0;background:transparent;border:0;border-radius:0;padding:0}
+.scl-founders-price>.eyebrow{margin:0!important}
+body:not(.original) .school-landing .scl-founders-price>h3{font:600 28px/1.2 Inter,sans-serif!important;text-transform:uppercase;letter-spacing:-.02em;color:#0d3b36;margin:0!important}
+body:not(.original) .school-landing .scl-founders-price>p:not(.eyebrow){font:400 14px/1.5 Inter,sans-serif!important;color:#59634f!important;margin:0!important}
+body:not(.original) .school-landing .scl-founders-price>.scl-founders-generation{border-block:1px solid #d2c08a;padding:8px 0;font-size:12px!important}
+.scl-founder-selector{border:0;padding:0;margin:0;min-width:0}
+.scl-founder-options{display:grid;grid-template-columns:1fr;gap:12px}.scl-founder-selector legend{font:600 14px/1.5 Inter,sans-serif;color:#0d3b36;margin-bottom:12px}
+.scl-founder-selector label{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto;align-content:start;align-items:center;gap:10px;padding:17px 19px;border:1px solid #b6ae91;border-radius:5px;margin:0;background:#faf8ef;cursor:pointer}.scl-founder-selector label:has(input:checked){background:#e8efdf;border-color:#0d3b36}.scl-founder-selector label:focus-within{outline:2px solid #ad8333;outline-offset:3px}
+.scl-founder-option-title{font:600 11px/1.5 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#0d3b36}.scl-founder-selector input{width:18px;height:18px;accent-color:#0d3b36;margin:0}
+.scl-founder-option-price{grid-column:1/-1;display:flex;align-items:baseline;gap:12px;font:600 52px/1.1 Inter,sans-serif;color:#173e2c;letter-spacing:.01em}.scl-founder-option-price small{font:400 13px/1.5 Inter,sans-serif;letter-spacing:0}.scl-founder-option-note{grid-column:1/-1;font:400 12px/1.5 Inter,sans-serif;color:#68715b}
+body:not(.original) .school-landing .scl-founders-price>.scl-founder-selected{font-size:12px!important;margin:0!important}
+.scl-founders-price>.scl-button{width:100%;justify-content:center;gap:25px}
+body:not(.original) .school-landing .scl-founders-price>.scl-founders-renewal{font-size:12px!important;margin:0!important}
+.scl-founders-standard{margin:0;padding-top:14px;border-top:1px solid #d2c08a}
+body:not(.original) .school-landing .scl-founders-standard p{font:400 13px/1.5 Inter,sans-serif!important;color:#59634f!important;margin:0 0 8px!important}.scl-founders-standard strong{color:#0d3b36;font-weight:600}
+@media(max-width:1000px){.scl-founders-layout{gap:38px}.scl-founders-price{padding:0}.scl-founder-option-price{font-size:36px}.scl-founders-dates{grid-template-columns:1fr;gap:19px}}
+@media(max-width:760px){.scl-founders-layout{grid-template-columns:1fr;gap:38px}.scl-founders-offer{padding:25px}.scl-founders-offer>.scl-join-logo{width:215px}.scl-founders-price{padding:0}.scl-founder-option-price{font-size:37px}.scl-founders-dates{grid-template-columns:1fr 1fr;gap:18px}body:not(.original) .school-landing .scl-founders-price>h3{font-size:28px!important}}
+
+@media(max-width:1100px) and (min-width:761px){.scl-founder-options{grid-template-columns:1fr}.scl-founder-option-price{font-size:41px}}
+@media(max-width:420px){.scl-founder-options{grid-template-columns:1fr}.scl-founder-option-price{font-size:43px}}
+
+@media(max-width:1100px) and (min-width:761px){.scl-founder-selector label{grid-template-rows:auto}}
+@media(max-width:420px){.scl-founder-selector label{grid-template-rows:auto}}
+
+/* Final welcome: a quiet white closing after the questions. */
+.school-landing .scl-homecoming{background:#fff;text-align:center;padding-top:85px;padding-bottom:85px}
+.school-landing .scl-homecoming>.eyebrow{color:#a47b2d;margin-bottom:24px;text-align:center}
+body:not(.original) .school-landing .scl-homecoming-intro{font:400 20px/1.6 Inter,sans-serif!important;color:#46574c!important;margin:0 auto!important;max-width:800px}
+.scl-homecoming-path{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;list-style:none;padding:0;margin:30px 0 40px}
+.scl-homecoming-path li{display:flex;align-items:center;gap:22px;font:500 11px/1.5 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#536358}
+.scl-homecoming-path li:not(:last-child)::after{content:"→";font-size:16px;letter-spacing:0;color:#a47b2d}
+body:not(.original) .school-landing .scl-homecoming h2{font:600 clamp(40px,4.5vw,68px)/1.07 Inter,sans-serif!important;letter-spacing:-.045em;text-transform:uppercase;color:#14271e;margin:0 0 30px!important}
+.scl-homecoming h2 span{color:#a47b2d}
+body:not(.original) .school-landing .scl-homecoming-belonging{font:400 17px/1.5 Inter,sans-serif!important;color:#536358!important;margin:0 0 27px!important}
+.scl-homecoming .scl-button{margin-top:0}
+@media(max-width:600px){.school-landing .scl-homecoming{padding-top:60px;padding-bottom:60px}.scl-homecoming-path{gap:12px;margin:27px 0 32px}.scl-homecoming-path li{font-size:9px;gap:12px;letter-spacing:.07em}body:not(.original) .school-landing .scl-homecoming-intro{font-size:17px!important}.scl-homecoming-intro br{display:none}body:not(.original) .school-landing .scl-homecoming-belonging{font-size:16px!important}}
+
+/* Personal contact closes the landing with the school green. */
+.school-landing .scl-contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:90px;background:#0d3b36;padding-top:64px;padding-bottom:64px}
+.scl-contact-copy>.eyebrow{color:#e1bd6e;margin-bottom:22px}
+body:not(.original) .school-landing .scl-contact h2{font:600 34px/1.2 Inter,sans-serif!important;letter-spacing:-.025em;text-transform:none;color:#f5f3ed;margin:0 0 20px!important}
+body:not(.original) .school-landing .scl-contact-copy>p:not(.eyebrow){font:400 17px/1.6 Inter,sans-serif!important;color:#d5e1d8!important;max-width:570px;margin:0!important}
+.scl-contact-action .scl-button{display:flex;width:100%;justify-content:center;align-items:center;gap:14px;min-height:56px;text-align:center}
+.scl-contact-action svg{width:26px;height:26px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){.school-landing .scl-contact{gap:40px}.scl-contact-action .scl-button{padding-inline:20px;font-size:15px}}
+@media(max-width:650px){.school-landing .scl-contact{grid-template-columns:1fr;gap:28px;padding-top:48px;padding-bottom:48px}body:not(.original) .school-landing .scl-contact h2{font-size:29px!important}.scl-contact-action{width:100%;max-width:420px}}
+
+/* Optional Origen invitation; same enrollment panel and existing colors. */
+.scl-promotion{margin:20px 0;padding:18px 0;border-top:1px solid #d5cbb7;border-bottom:1px solid #d5cbb7}.scl-promotion>label{display:block;font-weight:600;margin-bottom:8px}.scl-promotion>input{box-sizing:border-box;width:100%;padding:12px;border:1px solid #a5af9e;border-radius:5px;background:#fffdf6;color:#173e2c;font:inherit}.scl-promotion p{font-size:14px;line-height:1.55}.scl-promotion-summary{padding:14px;background:#edf2e7;color:#173e2c;border-radius:6px;color-scheme:light}.scl-promotion-summary[hidden]{display:none}.scl-promotion-consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5}.scl-promotion-consent input{margin-top:4px;flex-shrink:0;accent-color:#173e2c}
+.school-standalone dialog .scl-promotion-summary :is(p,label,span){color:#173e2c}body.school-standalone dialog .school-checkout .scl-promotion p{font-size:14px!important;line-height:1.5;margin:10px 0}.school-standalone dialog .scl-promotion-summary p:first-child{margin-top:0}.school-standalone dialog .scl-promotion-summary p:last-child{margin-bottom:0}
+
+.school-standalone-header button.standalone-enroll{background:transparent;cursor:pointer}
+
+/* Membership rules: distinct from promotional renewal consent. */
+.scl-rules-consent{display:flex;align-items:flex-start;gap:10px;margin:18px 0;font-size:14px;line-height:1.5}.scl-rules-consent input{flex:0 0 auto;width:18px;height:18px;margin:2px 0 0;accent-color:#0d3b36}.scl-rules-consent a{text-decoration:underline;text-underline-offset:3px}
