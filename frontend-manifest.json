@@ -4,11 +4,11 @@
   "files": [
     {
       "path": "static/landing/checkout-billing.css",
-      "sha256": "11722ffda89dc917b5eb1cd56aee13b8d55b0080b95000829624853f75a9627c"
+      "sha256": "732c081f57551fdd0c0a15bfebc42eacb13dd544160e97dca910f0b8eccb2005"
     },
     {
       "path": "static/landing/checkout-billing.js",
-      "sha256": "5ae2eaf19131c7ed59dc20944036dc1b38343c6f99c05dfad0202dd2855538a5"
+      "sha256": "96fc182c408b4fcf3e7ff893dea4cbc022b083cba8f17a26d532a37d82120b5c"
     },
     {
       "path": "static/landing/landing.js",
@@ -20,7 +20,7 @@
     },
     {
       "path": "templates/school/landing.html",
-      "sha256": "70bd23f26b76bc3e9213f48dd1cedcc75b1cb27616404c600bb45060ea76cf50"
+      "sha256": "9ec5cdc158cd39fa97c2c50f4ccbc59c87ee7db1ab926483aeeb03bd672b64b1"
     }
   ]
 }
