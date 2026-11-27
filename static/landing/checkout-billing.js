@@ -1,5 +1,27 @@
 (() => {
   'use strict';
+  for (const section of document.querySelectorAll('[data-enrollment-promotion]')) {
+    const form = section.closest('form');
+    const code = section.querySelector('[name="promotion_code"]');
+    const summary = section.querySelector('[data-promotion-summary]');
+    const terms = section.querySelector('[data-promotion-terms]');
+    const consent = section.querySelector('[name="promotion_consent"]');
+    if (!form || !code || !summary || !terms || !consent) continue;
+    const update = () => {
+      const invited = Boolean(code.value.trim());
+      const annual = form.querySelector('[name="plan"]:checked')?.value === 'annual';
+      summary.hidden = !invited;
+      consent.required = invited;
+      terms.textContent = (annual ? section.dataset.promotionAnnual : section.dataset.promotionMonthly) || '';
+      const ordinaryTerms = form.querySelector('[data-ordinary-enrollment-terms]');
+      if (ordinaryTerms) ordinaryTerms.hidden = invited;
+    };
+    code.addEventListener('input', () => { consent.checked = false; update(); });
+    form.addEventListener('change', event => {
+      if (event.target.name === 'plan') { consent.checked = false; update(); }
+    });
+    update();
+  }
   for (const section of document.querySelectorAll('[data-enrollment-v2]')) {
     const sameName = section.querySelector('[name="invoice_to_student"]');
     const legalName = section.querySelector('[data-invoice-legal-name]');
